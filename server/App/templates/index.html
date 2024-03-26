@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
 </head>
 <body>
     <h1 style=" display: flex; background-color: rgb(250, 221, 221); justify-content: center;">Is it Fake???????</h1>
+    <p>TITLE + ' ' + ARTICLE</p>
     <div style="display: flex;">
-        <p>Review of W3Schools:</p> <br>
-        <textarea id="text" name="text" rows="20" cols="50">
+         <br>
+        <textarea id="text" name="text" rows="40" cols="100" placeholder="TITLE + ARTICLE">
         </textarea>
 
     </div>
