@@ -52,5 +52,5 @@ def requisition():
     b = vectonizer.transform(b)
 
     pred = DTC.predict(b)
-    predicted = { 'predicted': int(pred[0])}
+    predicted = { 'predicted': int(pred[0]) }
     return jsonify(predicted)
