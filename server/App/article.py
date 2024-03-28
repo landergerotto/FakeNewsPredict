@@ -52,7 +52,6 @@ def register():
         a = tokenizer(article)
         b = [a]
         b = vectonizer.transform(b)
-        print(b)
 
         pred = DTC.predict(b)
         print(pred)
