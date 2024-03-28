@@ -42,23 +42,20 @@ def register():
     
     DTC = load('../models/DTC.pkl')
     lr = load('../models/LogisticRegression.pkl')
-
+    vectonizer = load('../models/vectonizer')
     # vtclf = VotingClassifier(
     #     estimators=[('DTC', DTC), ('lr', lr)]
     # )
 
     if request.method == "POST":
         article = request.form["text"]
-        print(type(article))
         a = tokenizer(article)
         b = [a]
-        vectonizer = TfidfVectorizer()
-        vectonizer.fit(b)
         b = vectonizer.transform(b)
-        # print(b)
+        print(b)
 
-        pred = lr.predict(b)
+        pred = DTC.predict(b)
         print(pred)
-
+        return str(pred)
 
     return render_template('index.html')

@@ -27,4 +27,7 @@ def create_app(test_config=None):
     from . import article
     app.register_blueprint(article.bp)
 
+    from . import json
+    app.register_blueprint(json.bp)
+
     return app
